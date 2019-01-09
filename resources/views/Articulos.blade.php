@@ -9,10 +9,14 @@
 		<div class="from-group col-md-4">
 			<div class="from-group">
 				<label>Nombre del Articulo:</label>
-				<input type="text" name="NoArticulo" required>
-			</div><br>
+				<select name="NoArticulo" required>
+					<option>Nombre del Articulo</option>
+					@foreach($arti as $articulos)
+						<option value="{{$articulos['id']}}">{{$articulos['nombreArticulo']}}</option>
+					@endforeach
+				</select>
 			<div class="from-group">
-				<label>Nombre del cliente:</label>
+				<br><label>Nombre del cliente:</label>
 				<select name="cliente" required>
 					<option required>Nombre del cliente</option>
 					@foreach($usuarios as $nom)
@@ -22,22 +26,12 @@
 					@endforeach
 				</select>
 			</div><br>
-			<div class="from-group">
-				<label>Descripción:</label>
-				<input type="text" name="descrip" required>
-			</div><br>
-			<div class="from-group">
-				<label>Precio Compra:</label>
-				<input type="number" name="PCompra" required>
-			</div><br>
+			
 			<div class="from-group">
 				<label>Precio Venta:</label>
 				<input type="number" name="PVenta" required>
 			</div><br>
-			<div class="from-group">
-				<label>Id del producto:</label>
-				<input type="text" name="idarticulo" required>
-			</div><br>
+			
 			<input type="hidden" name="fecha" value="<?php echo date("Y-m-d");?>">
 	        <input type="hidden" name="hora" value="<?php echo date("H:i:s");?>">
 		</div>

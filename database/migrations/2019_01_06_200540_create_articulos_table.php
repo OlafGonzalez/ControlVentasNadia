@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateListaArtisTable extends Migration
+class CreateArticulosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,12 @@ class CreateListaArtisTable extends Migration
      */
     public function up()
     {
-        Schema::create('lista_artis', function (Blueprint $table) {
+        Schema::create('articulos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombreArticulo');
             $table->longText('descripcion');
-            $table->float('precio_compra',8,2);
-            $table->float('precio_venta', 8, 2);
             $table->string('identificador');
-             $table->unsignedInteger('usuario_id');
-             $table->foreign('usuario_id')->references('id')->on('usuarios');
-            $table->date('fecha_entrega');
-            $table->time('hora_entrega');
+            $table->float('precio_compra',8,2);
             $table->timestamps();
         });
     }
@@ -35,6 +30,6 @@ class CreateListaArtisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lista_artis');
+        Schema::dropIfExists('articulos');
     }
 }

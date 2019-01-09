@@ -36,3 +36,7 @@ Route::resource('Cuentas','CuentaController');
 Route::resource('Pagos','PagosController');
 
 Route::POST('/nuevoPago','PagosController@store');
+
+Route::resource('AgregarArticulo','AgregarArticuloController');
+
+Route::POST('/nuevoArticulo','AgregarArticuloController@store');

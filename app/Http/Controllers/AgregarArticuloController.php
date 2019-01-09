@@ -3,11 +3,9 @@
 namespace ControlVentas\Http\Controllers;
 
 use Illuminate\Http\Request;
-use ControlVentas\Usuarios;
-use ControlVentas\ListaArti;
 use ControlVentas\Articulo;
 
-class ArticuloController extends Controller
+class AgregarArticuloController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +14,7 @@ class ArticuloController extends Controller
      */
     public function index()
     {
-        $usuarios = Usuarios::all();
-        $arti = Articulo::all();
-        $lista = ListaArti::all();
-        return view('Articulos',compact('lista','usuarios','arti'));
+        return view('AgregarArticulo');
     }
 
     /**
@@ -40,22 +35,15 @@ class ArticuloController extends Controller
      */
     public function store(Request $request)
     {
-        $arti = new ListaArti;
+        $ar = new Articulo;
+        $ar->nombreArticulo=$request->input('NoArticulo');
+        $ar->descripcion=$request->input('descrip');
+        $ar->identificador=$request->input('idarticulo');
+        $ar->precio_compra=$request->input('PCompra');
 
-        $arti->articulo_id=$request->input('NoArticulo');
-        /*$arti->descripcion=$request->input('descrip');
-        $arti->precio_compra=$request->input('PCompra');
-        $arti->identificador=$request->input('idarticulo');
-*/
-        $arti->usuario_id=$request->input('cliente');
-        $arti->precio_venta=$request->input('PVenta');
-
-        $arti->fecha_entrega=$request->input('fecha');
-        $arti->hora_entrega=$request->input('hora');
-        $arti->save();
+        $ar->save();
 
         return redirect('Articulo');
-
     }
 
     /**

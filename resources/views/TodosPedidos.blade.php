@@ -39,7 +39,7 @@
 		</tbody>
 		<tfoot>
 			<tr>
-				<td>Total de Ventas</td>
+				<td>Total de Compras</td>
 				<td></td>
 			</tr>
 			<tr>

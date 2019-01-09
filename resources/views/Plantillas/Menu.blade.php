@@ -14,9 +14,10 @@
 <nav class="navbar navbar-dark bg-primary">
 	<a href="{{url('Agregar')}}" class="navbar-brand">Agregar Cliente</a>
 	<a href="{{url('ListaCliente')}}" class="navbar-brand">Lista de clientes</a>
-	<a href="{{url('Articulo')}}" class="navbar-brand">Articulos</a>
+	<a href="{{url('Articulo')}}" class="navbar-brand">Hacer pedidos</a>
 	<a href="{{url('PedidosPendientes')}}" class="navbar-brand">Todos los pedidos</a>
 	<a href="{{url('Pagos')}}" class="navbar-brand">Agregar pago</a>
+	<a class="navbar-brand" href="{{url('AgregarArticulo')}}">Agregar Articulo</a>
 
 
 </nav>
