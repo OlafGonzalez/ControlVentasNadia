@@ -29,7 +29,7 @@
 			
 			<div class="from-group">
 				<label>Precio Venta:</label>
-				<input type="number" name="PVenta" required>
+				<input min="1" step=".5" type="number" name="PVenta" required>
 			</div><br>
 			
 			<input type="hidden" name="fecha" value="<?php echo date("Y-m-d");?>">

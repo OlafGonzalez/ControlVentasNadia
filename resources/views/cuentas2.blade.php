@@ -35,7 +35,7 @@
 		<thead>
 			<tr>
 				<th>No. de cuenta</th>
-				<th>pagos</th>
+				<th>Pagos</th>
 				<th>Fecha del pago</th>
 				<th>Hora del pago</th>
 			</tr>

@@ -5,6 +5,7 @@ namespace ControlVentas\Http\Controllers;
 use Illuminate\Http\Request;
 use ControlVentas\ListaArti;
 use ControlVentas\Usuarios;
+use ControlVentas\Articulo;
 class PedidosController extends Controller
 {
     /**
@@ -16,7 +17,8 @@ class PedidosController extends Controller
     {
         $pedidos = ListaArti::all();
         $us = Usuarios::all();
-        return view('TodosPedidos',compact('pedidos','us'));
+        $arti = Articulo::all();
+        return view('TodosPedidos',compact('pedidos','us','arti'));
     }
 
     /**

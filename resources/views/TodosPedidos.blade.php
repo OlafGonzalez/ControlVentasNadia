@@ -20,21 +20,42 @@
 		</thead>
 		<tbody>
 			@foreach($pedidos as $pedido)
+				
 			<tr>
 				<td>{{$pedido['id']}}</td>
+
 				<td>{{$pedido['precio_venta']}}</td>
-				<td>{{$pedido['precio_compra']}}</td>
+
+				@foreach($arti as $articulo)
+				@if($articulo->id == $pedido->articulo_id)
+				<td>{{$articulo['precio_compra']}}</td>
+				@endif
+				@endforeach
 				<td></td>
-				<td>{{$pedido->nombreArticulo}}</td>
+
+				@foreach($arti as $articulo)
+				@if($articulo->id == $pedido->articulo_id)
+				<td>{{$articulo['nombreArticulo']}}</td>
+				@endif
+				@endforeach
 				@foreach($us as $usuario)
+
 				@if($pedido->usuario_id == $usuario->id)
 				<td>{{$usuario->nombre}}</td>
 				@endif
 				@endforeach
+
+
 				<td>{{$pedido['fecha_entrega']}}</td>
-				<td>{{$pedido->identificador}}</td>
+
+				@foreach($arti as $articulo)
+				@if($articulo->id == $pedido->articulo_id)
+				<td>{{$articulo['identificador']}}</td>
+				@endif
+				@endforeach
 				
 			</tr>
+				
 			@endforeach
 		</tbody>
 		<tfoot>

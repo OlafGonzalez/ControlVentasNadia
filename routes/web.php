@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+//RUTAS ADMINISTRADOR
 
 Route::resource('/Admin','AdministradorController');
 //vista para agregar un cliente
@@ -40,3 +40,10 @@ Route::POST('/nuevoPago','PagosController@store');
 Route::resource('AgregarArticulo','AgregarArticuloController');
 
 Route::POST('/nuevoArticulo','AgregarArticuloController@store');
+
+Route::resource('Articulos','MostrarArticulosController');
+
+
+
+
+route::resource('/suma','sumacontroller');

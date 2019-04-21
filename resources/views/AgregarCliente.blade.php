@@ -17,7 +17,7 @@
 	</div><br>
 	<div class="from-group">
 		<label>Correo:</label>
-		<input type="text" placeholder="Correo" name="cor" required>
+		<input type="email" placeholder="Correo" name="cor" required>
 	</div>
 </div><br>
  <div class="from-group">

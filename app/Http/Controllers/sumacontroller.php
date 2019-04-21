@@ -3,9 +3,8 @@
 namespace ControlVentas\Http\Controllers;
 
 use Illuminate\Http\Request;
-use ControlVentas\Articulo;
 
-class AgregarArticuloController extends Controller
+class sumacontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class AgregarArticuloController extends Controller
      */
     public function index()
     {
-        return view('AgregarArticulo');
+        return view('suma');
     }
 
     /**
@@ -35,22 +34,7 @@ class AgregarArticuloController extends Controller
      */
     public function store(Request $request)
     {
-        $ar = new Articulo;
-            if ($request->hasFile('name')) {
-            $file = $request->file('name');
-            $nombre = time().$file->getClientOriginalName();
-            $file->move(public_path().'/images/',$nombre);
-
-        }
-
-        $ar->nombreArticulo=$request->input('NoArticulo');
-        $ar->descripcion=$request->input('descrip');
-        $ar->identificador=$request->input('idarticulo');
-        $ar->precio_compra=$request->input('PCompra');
-        $ar->foto = $nombre;
-        $ar->save();
-
-        return redirect('Articulo');
+        //
     }
 
     /**
@@ -72,8 +56,7 @@ class AgregarArticuloController extends Controller
      */
     public function edit($id)
     {
-        $articulo = Articulo::find($id);
-        return view('editProducto',compact('articulo','id'));
+        //
     }
 
     /**
@@ -85,13 +68,7 @@ class AgregarArticuloController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $articulo = Articulo::find($id);
-        $articulo->nombreArticulo= $request->get('NoArticulo');
-        $articulo->precio_compra= $request->get('PCompra');
-        $articulo->identificador=$request->get('idarticulo');
-        $articulo->save();
-
-        return redirect('/Articulos');
+        //
     }
 
     /**
@@ -102,12 +79,6 @@ class AgregarArticuloController extends Controller
      */
     public function destroy($id)
     {
-        
-        $articulo = Articulo::find($id);
-        $articulo -> delete();
-
-        return redirect('Articulos');
-
-
+        //
     }
 }

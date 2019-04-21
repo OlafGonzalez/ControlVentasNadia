@@ -61,6 +61,7 @@ class ListarUsController extends Controller
         $us = Usuarios::find($id);
         return view('editarCliente',compact('us','id'));
     }
+    
 
     /**
      * Update the specified resource in storage.

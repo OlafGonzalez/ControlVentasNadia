@@ -45,7 +45,7 @@ class AgregarClienteController extends Controller
         $us->eliminar = "activo";
 
         $us->save();
-        return redirect('Admin');
+        return redirect('ListaCliente');
 
     }
 

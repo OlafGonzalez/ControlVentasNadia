@@ -40,22 +40,20 @@ class ArticuloController extends Controller
      */
     public function store(Request $request)
     {
+
         $arti = new ListaArti;
 
+       
+        
+        
         $arti->articulo_id=$request->input('NoArticulo');
-        /*$arti->descripcion=$request->input('descrip');
-        $arti->precio_compra=$request->input('PCompra');
-        $arti->identificador=$request->input('idarticulo');
-*/
         $arti->usuario_id=$request->input('cliente');
         $arti->precio_venta=$request->input('PVenta');
-
         $arti->fecha_entrega=$request->input('fecha');
         $arti->hora_entrega=$request->input('hora');
         $arti->save();
 
         return redirect('Articulo');
-
     }
 
     /**

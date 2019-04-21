@@ -19,6 +19,7 @@ class CreateArticulosTable extends Migration
             $table->longText('descripcion');
             $table->string('identificador');
             $table->float('precio_compra',8,2);
+            $table->string('foto');
             $table->timestamps();
         });
     }
