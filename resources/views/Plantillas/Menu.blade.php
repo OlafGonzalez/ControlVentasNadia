@@ -21,7 +21,21 @@
 	<a href="{{url('Pagos')}}" class="navbar-brand">Agregar pago</a>
 	<a class="navbar-brand" href="{{url('AgregarArticulo')}}">Agregar Articulo</a>
 	<a class="navbar-brand" href="{{url('Articulos')}}">Articulos</a>
+	<a href="#" class="nav-link dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
 
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Cerrar Sesión
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
 </nav>
 		@yield('content')
 	

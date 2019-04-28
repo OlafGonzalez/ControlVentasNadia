@@ -47,3 +47,6 @@ Route::resource('Articulos','MostrarArticulosController');
 
 
 route::resource('/suma','sumacontroller');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

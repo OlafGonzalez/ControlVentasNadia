@@ -17,7 +17,7 @@ class PagosController extends Controller
     public function index()
     {
         $usuarios = Usuarios::all();
-        return view('AgregarPago',compact('usuarios'));
+        return view('agregarPago',compact('usuarios'));
     }
 
     /**
