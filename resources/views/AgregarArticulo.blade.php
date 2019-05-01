@@ -17,12 +17,12 @@
 			</div><br>
 	<div class="from-group">
 				<label>Id del producto:</label>
-				<input type="text" name="idarticulo" required>
+				<input type="text" name="idarticulo" >
 			</div><br>
 	<div class="from-group">
 				<label>Descripción:</label>
 				
-				<textarea name="descrip" required></textarea>
+				<textarea name="descrip" ></textarea>
 			</div><br>	
 	<div class="from-group">
 				<label>Seleccionar archivo:</label>

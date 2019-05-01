@@ -5,19 +5,23 @@ namespace ControlVentas\Http\Controllers;
 use Illuminate\Http\Request;
 use ControlVentas\Articulo;
 
-class MostrarArticulosController extends Controller
+
+class HomeUserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-                $request->user()->authorizeRoles('admin');
-
+       
+          
         $Articulo = Articulo::all();
-        return view('MostrarTodosArticulos',compact('Articulo'));
+        return view('UserHome',compact('Articulo'));
+
+
+
     }
 
     /**

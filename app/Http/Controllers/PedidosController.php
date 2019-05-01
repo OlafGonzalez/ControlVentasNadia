@@ -13,8 +13,10 @@ class PedidosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+                $request->user()->authorizeRoles('admin');
+
         $pedidos = ListaArti::all();
         $us = Usuarios::all();
         $arti = Articulo::all();

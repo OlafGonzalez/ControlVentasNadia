@@ -16,8 +16,8 @@ class CreateCuentaTable extends Migration
         Schema::create('cuentas', function (Blueprint $table) {
             $table->increments('id');
             $table->float('pagos',8,2);
-              $table->unsignedInteger('usuario_id');
-             $table->foreign('usuario_id')->references('id')->on('usuarios');
+            $table->unsignedInteger('usuario_id');
+            $table->foreign('usuario_id')->references('id')->on('usuarios');
             $table->date('fecha_entrega');
             $table->time('hora_entrega');
             $table->timestamps();

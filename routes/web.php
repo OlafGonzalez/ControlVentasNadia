@@ -44,9 +44,21 @@ Route::POST('/nuevoArticulo','AgregarArticuloController@store');
 Route::resource('Articulos','MostrarArticulosController');
 
 
+//RUTAS DEL USUARIO 
 
 
-route::resource('/suma','sumacontroller');
+Route::resource('/User','HomeUserController');
+
+
+
+
+
+
+
+
+//////////////////////////////////////
+
+//route::resource('/suma','sumacontroller');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header"></div>
 
                 <div align="center">
                   @if(Auth::user()->hasRole('admin'))
@@ -20,7 +20,7 @@
 
                   <div><h1>Acceso de usuario</h1></div>
                                         
-                  <form action="/Usuario/nuevo">
+                  <form action="/User">
                       <button type="submit" class="btn btn-success btn-lg btn-block">Acceder</button>
                   </div>
 

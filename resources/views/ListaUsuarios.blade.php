@@ -6,7 +6,11 @@
 </div><br>
 
 <div class="container">
-	<table class="table table_striped">
+	<div>
+		<input class="col-md-4" type="text" id="myInput" onkeyup="myFunction()" placeholder="Busqueda por Nombre" title="Busqueda Rapida" class="form-control"><br>
+	</div><br>	
+
+	<table id="myTable" class="table table_striped">
 		<thead>
 			<tr>
 				<th>No.De cliente</th>

@@ -12,16 +12,9 @@
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 <body>
+	<nav class="navbar navbar-dark bg-primary">
 
-<nav class="navbar navbar-dark bg-primary">
-	<a href="{{url('Agregar')}}" class="navbar-brand">Agregar Cliente</a>
-	<a href="{{url('ListaCliente')}}" class="navbar-brand">Lista de clientes</a>
-	<a href="{{url('Articulo')}}" class="navbar-brand">Hacer pedidos</a>
-	<a href="{{url('PedidosPendientes')}}" class="navbar-brand">Todos los pedidos</a>
-	<a href="{{url('Pagos')}}" class="navbar-brand">Agregar pago</a>
-	<a class="navbar-brand" href="{{url('AgregarArticulo')}}">Agregar Articulo</a>
-	<a class="navbar-brand" href="{{url('Articulos')}}">Articulos</a>
-	<a href="#" class="nav-link dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+<a href="#" class="nav-link dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -37,33 +30,13 @@
                                             {{ csrf_field() }}
                                         </form>
 </nav>
+
+
 		@yield('content')
-	
+
+
+
+
+
+	</nav>
 </body>
-<script>
-
-	
-	@yield('script')
-	
-</script>
-<script>
- function myFunction() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-  td = tr[i].getElementsByTagName("td")[1];
-   if (td) {
-     if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-       tr[i].style.display = "none";
-     }
-    }       
-  }
-}
-
-</script>
-</html>

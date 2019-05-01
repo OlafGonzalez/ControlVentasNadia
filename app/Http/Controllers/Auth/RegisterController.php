@@ -3,6 +3,7 @@
 namespace ControlVentas\Http\Controllers\Auth;
 
 use ControlVentas\User;
+use ControlVentas\Role;
 use ControlVentas\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -51,6 +52,7 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'telefono' => 'required|string|max:255',
         ]);
     }
 
@@ -66,6 +68,7 @@ class RegisterController extends Controller
         'name' => $data['name'],
         'email' => $data['email'],
         'password' => bcrypt($data['password']),
+        'telefono' => $data['telefono'],
     ]);
     $user
         ->roles()
