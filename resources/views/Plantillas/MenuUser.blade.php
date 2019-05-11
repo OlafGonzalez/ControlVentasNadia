@@ -5,16 +5,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <head>
-
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7920997214711500",
+    enable_page_level_ads: true
+  });
+</script>
 	<title>Control de Ventas</title>
-	<link rel="stylesheet" type="text/css" href="js/filtergrid.css" media="screen" />
-	  <script type="text/javascript" src="js/tablefilter.js"></script>
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	
 </head>
-<body>
-	<nav class="navbar navbar-dark bg-primary">
+<body style="background-color:#ebefd0">
+	<nav class="navbar navbar-dark" style="background-color:#085f63;">
+    <a href="{{url('User')}}" class="navbar-brand">Hombre</a>
+    <a href="" class="navbar-brand">Mujer</a>
+    <a href="{{url('Cuenta')}}" class="navbar-brand">Cuenta</a>
 
-<a href="#" class="nav-link dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+   
+
+    <a href="#" class="nav-link dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -29,6 +38,8 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
+                                    </li>
+                                </ul>
 </nav>
 
 
@@ -40,3 +51,9 @@
 
 	</nav>
 </body>
+<script>
+
+    
+    @yield('script')
+    
+</script>

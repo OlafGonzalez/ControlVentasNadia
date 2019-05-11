@@ -5,17 +5,22 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <head>
-
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7920997214711500",
+    enable_page_level_ads: true
+  });
+</script>
 	<title>Control de Ventas</title>
-	<link rel="stylesheet" type="text/css" href="js/filtergrid.css" media="screen" />
-	  <script type="text/javascript" src="js/tablefilter.js"></script>
+	
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 <body>
 
 <nav class="navbar navbar-dark bg-primary">
-	<a href="{{url('Agregar')}}" class="navbar-brand">Agregar Cliente</a>
 	<a href="{{url('ListaCliente')}}" class="navbar-brand">Lista de clientes</a>
+  <a href="{{url('Apartados')}}" class="navbar-brand">Pedidos Apartados</a>
 	<a href="{{url('Articulo')}}" class="navbar-brand">Hacer pedidos</a>
 	<a href="{{url('PedidosPendientes')}}" class="navbar-brand">Todos los pedidos</a>
 	<a href="{{url('Pagos')}}" class="navbar-brand">Agregar pago</a>

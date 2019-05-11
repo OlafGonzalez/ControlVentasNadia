@@ -11,8 +11,8 @@
 				<select name="cliente" required>
 					<option required>Nombre del cliente</option>
 					@foreach($usuarios as $nom)
-					@if($nom->eliminar == "activo")
-					<option value="{{$nom['id']}}">{{$nom['nombre']}}</option>
+					@if($nom->id>=3 && $nom->eliminar == 'activo')
+					<option value="{{$nom['id']}}">{{$nom['name']}}</option>
 					@endif
 					@endforeach
 				</select>	
@@ -21,7 +21,7 @@
 		<div class="from-group col-md-4">
 			<div class="from-group">
 				<label>Cantidad del pago</label>
-				<input type="number" min="1" step=".1" name="pago" required>
+				<input type="number"  step=".1" name="pago" required>
 			</div>
 		</div><br>
 		<input type="hidden" name="fecha" value="<?php echo date("Y-m-d");?>">

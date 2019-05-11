@@ -21,10 +21,10 @@
 		</thead>
 		<tbody>
 			@foreach($usuarios as $us)
-			@if($us->eliminar == "activo")
+			@if($us->id>=3 && $us->eliminar == 'activo')
 			<tr>
 				<td>{{$us['id']}}</td>
-				<td>{{$us['nombre']}}</td>
+				<td>{{$us['name']}}</td>
 				<td>{{$us['telefono']}}</td>
 				<td><a href="{{action('ListarUsController@edit',$us['id'])}}" class="btn btn-warning">Modificar</a></td>
 				<td>
@@ -36,9 +36,10 @@
 					</form>
 				</td>
 				<td><a href="{{action('CuentaController@edit',$us['id'])}}" class="btn btn-info">Cuenta</a></td>
+			</tr>
+
 				@endif
 			@endforeach
-			</tr>
 		</tbody>
 	</table>
 </div>

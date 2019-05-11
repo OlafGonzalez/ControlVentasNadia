@@ -4,8 +4,9 @@ namespace ControlVentas\Http\Controllers;
 
 use Illuminate\Http\Request;
 use ControlVentas\ListaArti;
-use ControlVentas\Usuarios;
+use ControlVentas\User;
 use ControlVentas\Cuentas;
+use ControlVentas\Articulo;
 class CuentaController extends Controller
 {
     /**
@@ -15,11 +16,11 @@ class CuentaController extends Controller
      */
     public function index(Request $request)
     {
-                $request->user()->authorizeRoles('admin');
+        $request->user()->authorizeRoles('admin');
 
         $cuenta = Cuentas::all();
         $pedidos = ListaArti::all();
-        $us = Usuarios::all();
+        $us = User::all();
         return view('Cuenta',compact('pedidos','us','cuenta'));
     }
 
@@ -63,12 +64,12 @@ class CuentaController extends Controller
      */
     public function edit($id)
     {
-
-        $usuarios = Usuarios::find($id);
+        $articulo = Articulo::all();
+        $usuarios = User::find($id);
         $cuenta = Cuentas::all();
         $pedidos = ListaArti::all();
 
-        return view('cuentas2',compact('cuenta','usuarios','pedidos'));
+        return view('cuentas2',compact('cuenta','usuarios','pedidos','articulo'));
 
     }
 

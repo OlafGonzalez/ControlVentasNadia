@@ -17,10 +17,18 @@
 				<input type="number" name="PCompra" value="{{$articulo->precio_compra}}" required>
 			</div><br>
 	<div class="from-group">
+				<label>Precio Venta:</label>
+				<input type="text" name="PVenta" value="{{$articulo->precio_venta}}" required>
+			</div><br>			
+	<div class="from-group">
 				<label>Id del producto:</label>
-				<input type="text" name="idarticulo" value="{{$articulo->identificador}}" required>
+				<input type="text" name="iden" value="{{$articulo->identificador}}" required>
 			</div><br>	
-	
+	<div class="from-group">
+				<label>Descripción:</label>
+				<input type="text" name="descripcion" value="{{$articulo->descripcion}}">
+			</div><br>	
+
 </div>
 
 

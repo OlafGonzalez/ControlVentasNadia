@@ -17,7 +17,7 @@ class CreateCuentaTable extends Migration
             $table->increments('id');
             $table->float('pagos',8,2);
             $table->unsignedInteger('usuario_id');
-            $table->foreign('usuario_id')->references('id')->on('usuarios');
+            $table->foreign('usuario_id')->references('id')->on('users');
             $table->date('fecha_entrega');
             $table->time('hora_entrega');
             $table->timestamps();

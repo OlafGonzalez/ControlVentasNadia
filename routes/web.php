@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::resource('/Admin','AdministradorController');
 //vista para agregar un cliente
-Route::resource('/Agregar','AgregarClienteController');
+//Route::resource('/Agregar','AgregarClienteController');
 //POST Para guardar cliente de la BD
 Route::POST('NuevoCliente','AgregarClienteController@store');
 
@@ -43,13 +43,15 @@ Route::POST('/nuevoArticulo','AgregarArticuloController@store');
 
 Route::resource('Articulos','MostrarArticulosController');
 
+Route::resource('Apartados','ApartadoController');
+
 
 //RUTAS DEL USUARIO 
 
 
 Route::resource('/User','HomeUserController');
 
-
+Route::resource('/Cuenta','CuentaUserController');
 
 
 

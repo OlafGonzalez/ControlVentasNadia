@@ -24,10 +24,11 @@
 			<tr>
 				<td>{{$pedido['id']}}</td>
 
-				<td>{{$pedido['precio_venta']}}</td>
+				
 
 				@foreach($arti as $articulo)
 				@if($articulo->id == $pedido->articulo_id)
+				<td>{{$articulo['precio_venta']}}</td>
 				<td>{{$articulo['precio_compra']}}</td>
 				@endif
 				@endforeach
@@ -41,7 +42,7 @@
 				@foreach($us as $usuario)
 
 				@if($pedido->usuario_id == $usuario->id)
-				<td>{{$usuario->nombre}}</td>
+				<td>{{$usuario->name}}</td>
 				@endif
 				@endforeach
 
@@ -60,7 +61,7 @@
 		</tbody>
 		<tfoot>
 			<tr>
-				<td>Total de Compras</td>
+				<td>Total de Ventas</td>
 				<td></td>
 			</tr>
 			<tr>

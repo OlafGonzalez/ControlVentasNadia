@@ -12,7 +12,9 @@
 				<select name="NoArticulo" required>
 					<option>Nombre del Articulo</option>
 					@foreach($arti as $articulos)
+						@if($articulos->disponibilidad == 'Disponible' && $articulos->eliminar == 'activo')
 						<option value="{{$articulos['id']}}">{{$articulos['nombreArticulo']}}</option>
+						@endif
 					@endforeach
 				</select>
 			<div class="from-group">
@@ -20,17 +22,13 @@
 				<select name="cliente" required>
 					<option required>Nombre del cliente</option>
 					@foreach($usuarios as $nom)
-					@if($nom->eliminar == "activo")
-					<option value="{{$nom['id']}}">{{$nom['nombre']}}</option>
+					@if($nom->id>=3 && $nom->eliminar == 'activo')
+					<option value="{{$nom['id']}}">{{$nom['name']}}</option>
 					@endif
 					@endforeach
 				</select>
 			</div><br>
 			
-			<div class="from-group">
-				<label>Precio Venta:</label>
-				<input min="1" step=".5" type="number" name="PVenta" required>
-			</div><br>
 			
 			<input type="hidden" name="fecha" value="<?php echo date("Y-m-d");?>">
 	        <input type="hidden" name="hora" value="<?php echo date("H:i:s");?>">

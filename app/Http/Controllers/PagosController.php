@@ -3,7 +3,7 @@
 namespace ControlVentas\Http\Controllers;
 
 use Illuminate\Http\Request;
-use ControlVentas\Usuarios;
+use ControlVentas\User;
 
 use ControlVentas\Cuentas;
 
@@ -16,9 +16,9 @@ class PagosController extends Controller
      */
     public function index(Request $request)
     {
-                $request->user()->authorizeRoles('admin');
+        $request->user()->authorizeRoles('admin');
 
-        $usuarios = Usuarios::all();
+        $usuarios = User::all();
         return view('agregarPago',compact('usuarios'));
     }
 

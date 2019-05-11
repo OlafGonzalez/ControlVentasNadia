@@ -16,9 +16,14 @@ class CreateArticulosTable extends Migration
         Schema::create('articulos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombreArticulo');
-            $table->longText('descripcion');
-            $table->string('identificador');
+            $table->longText('descripcion')->nullable();
+            $table->string('identificador')->nullable();
             $table->float('precio_compra',8,2);
+            $table->float('precio_venta',8,2);
+            $table->enum('genero',['Hombre','Mujer']);
+            $table->enum('disponibilidad',['Disponible','Apartado']);
+            $table->enum('eliminar',['activo','inactivo']);       
+            $table->string('categoria');
             $table->string('foto');
             $table->timestamps();
         });

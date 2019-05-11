@@ -3,7 +3,7 @@
 namespace ControlVentas\Http\Controllers;
 
 use Illuminate\Http\Request;
-use ControlVentas\Usuarios;
+use ControlVentas\User;
 
 class ListarUsController extends Controller
 {
@@ -14,9 +14,9 @@ class ListarUsController extends Controller
      */
     public function index(Request $request)
     {
-                $request->user()->authorizeRoles('admin');
+        $request->user()->authorizeRoles('admin');
 
-        $usuarios = Usuarios::all();
+        $usuarios = User::all();
         return view('ListaUsuarios',compact('usuarios'));
     }
 
@@ -60,7 +60,7 @@ class ListarUsController extends Controller
      */
     public function edit($id)
     {
-        $us = Usuarios::find($id);
+        $us = User::find($id);
         return view('editarCliente',compact('us','id'));
     }
     
@@ -74,10 +74,10 @@ class ListarUsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $us = Usuarios::find($id);
+        $us = User::find($id);
         $us->telefono=$request->get('telefono');
-        $us->nombre=$request->get('nombre');
-        $us->correo=$request->get('correo');
+        $us->name=$request->get('nombre');
+        $us->email=$request->get('correo');
 
         $us->save();
 
@@ -92,7 +92,7 @@ class ListarUsController extends Controller
      */
     public function destroy($id)
     {
-        $us = Usuarios::find($id);
+        $us = User::find($id);
 
         $us->eliminar="inactivo";
         $us->save();

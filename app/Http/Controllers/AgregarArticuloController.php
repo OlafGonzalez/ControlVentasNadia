@@ -37,7 +37,7 @@ class AgregarArticuloController extends Controller
      */
     public function store(Request $request)
     {
-        $ar = new Articulo;
+            $ar = new Articulo;
             if ($request->hasFile('name')) {
             $file = $request->file('name');
             $nombre = time().$file->getClientOriginalName();
@@ -49,6 +49,10 @@ class AgregarArticuloController extends Controller
         $ar->descripcion=$request->input('descrip');
         $ar->identificador=$request->input('idarticulo');
         $ar->precio_compra=$request->input('PCompra');
+        $ar->precio_venta=$request->input('PVenta');
+        $ar->genero=$request->input('category1');
+        $ar->categoria=$request->input('category2');
+
         $ar->foto = $nombre;
         $ar->save();
 
@@ -90,7 +94,10 @@ class AgregarArticuloController extends Controller
         $articulo = Articulo::find($id);
         $articulo->nombreArticulo= $request->get('NoArticulo');
         $articulo->precio_compra= $request->get('PCompra');
-        $articulo->identificador=$request->get('idarticulo');
+        $articulo->identificador=$request->get('iden');
+        $articulo->precio_venta=$request->get('PVenta');
+        $articulo->descripcion=$request->get('descripcion');
+
         $articulo->save();
 
         return redirect('/Articulos');
@@ -105,10 +112,11 @@ class AgregarArticuloController extends Controller
     public function destroy($id)
     {
         
-        $articulo = Articulo::find($id);
-        $articulo -> delete();
+        $us = Articulo::find($id);
 
-        return redirect('Articulos');
+        $us->eliminar="inactivo";
+        $us->save();
+        return redirect('Articulos'); 
 
 
     }

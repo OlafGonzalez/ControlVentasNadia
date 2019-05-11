@@ -4,7 +4,7 @@ namespace ControlVentas\Http\Controllers;
 
 use Illuminate\Http\Request;
 use ControlVentas\ListaArti;
-use ControlVentas\Usuarios;
+use ControlVentas\User;
 use ControlVentas\Articulo;
 class PedidosController extends Controller
 {
@@ -18,7 +18,7 @@ class PedidosController extends Controller
                 $request->user()->authorizeRoles('admin');
 
         $pedidos = ListaArti::all();
-        $us = Usuarios::all();
+        $us = User::all();
         $arti = Articulo::all();
         return view('TodosPedidos',compact('pedidos','us','arti'));
     }

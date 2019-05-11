@@ -1,7 +1,7 @@
 @extends('Plantillas.Menu')
 @section('content')
 
-<h1 align="center">Cuenta de {{$usuarios->nombre}}</h1>
+<h1 align="center">Cuenta de {{$usuarios->name}}</h1>
 
 
 <div class="container">
@@ -10,6 +10,7 @@
 			<tr>
 				<th>No.de pedido</th>
 				<th>Precio de venta</th>
+				<th>Nombre</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -17,7 +18,12 @@
 			@if($pedido->usuario_id == $usuarios->id)
 			<tr>
 				<td>{{$pedido['id']}}</td>
-				<td>{{$pedido['precio_venta']}}</td>
+				@foreach($articulo as $arti)
+				@if($pedido->articulo_id == $arti->id)
+				<td>{{$arti['precio_venta']}}</td>
+				<td>{{$arti['nombreArticulo']}}</td>
+				@endif
+				@endforeach
 			</tr>
 			@endif
 			@endforeach

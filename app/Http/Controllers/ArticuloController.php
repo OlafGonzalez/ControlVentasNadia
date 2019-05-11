@@ -3,7 +3,7 @@
 namespace ControlVentas\Http\Controllers;
 
 use Illuminate\Http\Request;
-use ControlVentas\Usuarios;
+use ControlVentas\User;
 use ControlVentas\ListaArti;
 use ControlVentas\Articulo;
 
@@ -16,9 +16,9 @@ class ArticuloController extends Controller
      */
     public function index(Request $request)
     {
-                $request->user()->authorizeRoles('admin');
+        $request->user()->authorizeRoles('admin');
 
-        $usuarios = Usuarios::all();
+        $usuarios = User::all();
         $arti = Articulo::all();
         $lista = ListaArti::all();
         return view('Articulos',compact('lista','usuarios','arti'));
@@ -45,14 +45,18 @@ class ArticuloController extends Controller
 
         $arti = new ListaArti;
 
-       
-        
+         $arti2 = Articulo::find($request->input('NoArticulo'));
+
+        $arti2->disponibilidad = 'Apartado';
+        $arti2->save();
         
         $arti->articulo_id=$request->input('NoArticulo');
         $arti->usuario_id=$request->input('cliente');
-        $arti->precio_venta=$request->input('PVenta');
+      //  $arti->precio_venta=$request->input('PVenta');
         $arti->fecha_entrega=$request->input('fecha');
         $arti->hora_entrega=$request->input('hora');
+        //$arti->disponibilidad = 'Apartado';
+
         $arti->save();
 
         return redirect('Articulo');
@@ -77,7 +81,12 @@ class ArticuloController extends Controller
      */
     public function edit($id)
     {
-        //
+        $arti = Articulo::find($id);
+
+        $arti->disponibilidad = 'Apartado';
+        $arti->save();
+
+        return redirect('/Articulos');
     }
 
     /**

@@ -11,7 +11,7 @@
 				<div class="col-md-4">
 					<div class="from-group col-md-4">
 						<label>Nombre</label>
-						<input type="text" name="nombre" value="{{$us->nombre}}">
+						<input type="text" name="nombre" value="{{$us->name}}">
 					</div>
 				</div>
 			</div><br>
@@ -30,7 +30,7 @@
 				<div class="col-md-4">
 					<div class="from-group col-md-4">
 						<label>Correo</label>
-						<input type="text" name="correo" value="{{$us->correo}}">
+						<input type="text" name="correo" value="{{$us->email}}">
 					</div>
 				</div>
 			</div><br>
