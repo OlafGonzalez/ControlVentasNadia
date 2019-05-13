@@ -15,7 +15,7 @@ class PedidosController extends Controller
      */
     public function index(Request $request)
     {
-                $request->user()->authorizeRoles('admin');
+        $request->user()->authorizeRoles('admin');
 
         $pedidos = ListaArti::all();
         $us = User::all();

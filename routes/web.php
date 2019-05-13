@@ -49,9 +49,11 @@ Route::resource('Apartados','ApartadoController');
 //RUTAS DEL USUARIO 
 
 
-Route::resource('/User','HomeUserController');
+Route::resource('/Hombre','HomeUserController');
 
 Route::resource('/Cuenta','CuentaUserController');
+
+Route::resource('/Mujer','UserMujerHomeController');
 
 
 

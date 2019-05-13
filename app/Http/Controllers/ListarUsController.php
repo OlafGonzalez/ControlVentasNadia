@@ -60,6 +60,7 @@ class ListarUsController extends Controller
      */
     public function edit($id)
     {
+
         $us = User::find($id);
         return view('editarCliente',compact('us','id'));
     }
@@ -74,6 +75,8 @@ class ListarUsController extends Controller
      */
     public function update(Request $request, $id)
     {
+         $request->user()->authorizeRoles('admin');
+
         $us = User::find($id);
         $us->telefono=$request->get('telefono');
         $us->name=$request->get('nombre');

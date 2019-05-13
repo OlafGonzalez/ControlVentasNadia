@@ -16,14 +16,28 @@ class HomeUserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+         $request->user()->authorizeRoles('user');
+
         
         $Articulo = Articulo::all();
-        $ArMujer = DB::table('articulos')->where('genero','Mujer')->where('disponibilidad','Disponible')->take(1)->get();
-        $ArHombre = DB::table('articulos')->where('genero','Hombre')->where('disponibilidad','Disponible')->take(1)->get();
 
-        return view('UserHome',compact('Articulo','ArMujer','ArHombre'));
+
+
+        $ArHombrePlayera = DB::table('articulos')->where('genero','Hombre')->where('disponibilidad','Disponible')->where('categoria','Playera')->take(1)->get();
+
+       
+
+        $ArHombrePantalones = DB::table('articulos')->where('genero','Hombre')->where('disponibilidad','Disponible')->where('categoria','Pantalones')->take(1)->get();
+
+         $ArHombreCamisa = DB::table('articulos')->where('genero','Hombre')->where('disponibilidad','Disponible')->where('categoria','Camisas')->take(1)->get();
+
+         $ArHombreAccesorios = DB::table('articulos')->where('genero','Hombre')->where('disponibilidad','Disponible')->where('categoria','Accesarios')->take(1)->get();
+
+        $ApartadoHombre = DB::table('articulos')->where('genero','Hombre')->where('disponibilidad','Apartado')->take(1)->get();
+
+        return view('UserHome',compact('Articulo','ArHombrePlayera','ApartadoHombre','ArHombrePantalones','ArHombreCamisa','ArHombreAccesorios'));
 
 
 
@@ -80,7 +94,7 @@ class HomeUserController extends Controller
         $apartado->usuario_id =  $user->id;
         $apartado->save();
 
-        return redirect('User');
+        return redirect('Hombre');
     }
 
     /**

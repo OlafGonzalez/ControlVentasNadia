@@ -20,7 +20,7 @@
 
                   <div><h1>Acceso de usuario</h1></div>
                                         
-                  <form action="/User">
+                  <form action="/Cuenta">
                       <button type="submit" class="btn btn-success btn-lg btn-block">Acceder</button>
                   </div>
 

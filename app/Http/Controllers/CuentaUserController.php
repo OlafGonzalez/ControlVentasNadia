@@ -18,8 +18,10 @@ class CuentaUserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->authorizeRoles('user');
+
         $user = Auth::user();
         $articulo = Articulo::all();
         $usuarios = User::find($user->id);

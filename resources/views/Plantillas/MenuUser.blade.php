@@ -17,8 +17,8 @@
 </head>
 <body style="background-color:#ebefd0">
 	<nav class="navbar navbar-dark" style="background-color:#085f63;">
-    <a href="{{url('User')}}" class="navbar-brand">Hombre</a>
-    <a href="" class="navbar-brand">Mujer</a>
+    <a href="{{url('Hombre')}}" class="navbar-brand">Hombre</a>
+    <a href="{{url('Mujer')}}" class="navbar-brand">Mujer</a>
     <a href="{{url('Cuenta')}}" class="navbar-brand">Cuenta</a>
 
    

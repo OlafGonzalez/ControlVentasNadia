@@ -1,15 +1,15 @@
 <?php
 
 namespace ControlVentas\Http\Controllers;
-
-use Illuminate\Http\Request;
 use ControlVentas\Articulo;
 use ControlVentas\Apartado;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use ControlVentas\User;
-use ControlVentas\ListaArti;
 
-class ApartadoController extends Controller
+use Illuminate\Http\Request;
+
+class UserMujerHomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,13 +18,23 @@ class ApartadoController extends Controller
      */
     public function index(Request $request)
     {
-        $request->user()->authorizeRoles('admin');
 
-        $user = User::all();
-        $articulo = Articulo::all();
-        $apartado = Apartado::all();
+        $request->user()->authorizeRoles('user');
+        $Articulo = Articulo::all();
 
-        return view('PedidosApartados',compact('user','articulo','apartado'));
+        $ArMujerJoyeria = DB::table('articulos')->where('genero','Mujer')->where('disponibilidad','Disponible')->where('categoria','Joyeria')->take(1)->get();
+
+
+        $ArMujerBlusa = DB::table('articulos')->where('genero','Mujer')->where('disponibilidad','Disponible')->where('categoria','Blusas')->take(1)->get();
+
+        $Otros= DB::select('select * from controlventas.articulos where (categoria = "Accesarios" or "Vestidos" or "Faldas")  and   disponibilidad = "Disponible" and genero = "Mujer" limit 1');
+
+        $ArMujer = DB::table('articulos')->where('genero','Mujer')->where('disponibilidad','Disponible')->take(1)->get();
+
+
+        $ApartadoHombre = DB::table('articulos')->where('genero','Mujer')->where('disponibilidad','Apartado')->take(1)->get();
+
+        return view('userHomeMujer',compact('ArMujer','Articulo','ArMujerJoyeria','ArMujerBlusa','Otros','ApartadoHombre'));
     }
 
     /**
@@ -67,13 +77,20 @@ class ApartadoController extends Controller
      */
     public function edit($id)
     {
-        $arti = Articulo::find($id);
+        //
 
-        $arti->disponibilidad = 'Disponible';
-        $arti->save();
+        $user = Auth::user();
+        $articulo = Articulo::find($id);
+        $articulo->disponibilidad = 'Apartado';
+        $articulo->save();
 
-        return redirect('/Articulos');
+        $apartado = new Apartado;
 
+        $apartado->articulo_id = $id;
+        $apartado->usuario_id =  $user->id;
+        $apartado->save();
+
+        return redirect('Mujer');
     }
 
     /**
@@ -85,21 +102,7 @@ class ApartadoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-        $arti = new ListaArti;
-        
-        $arti->articulo_id=$request->input('NoArticulo');
-        $arti->usuario_id=$request->input('cliente');
-      //  $arti->precio_venta=$request->input('PVenta');
-        $arti->fecha_entrega=$request->input('fecha');
-        $arti->hora_entrega=$request->input('hora');
-        $arti->save();
-
-        $apart = Apartado::find($id);
-        $apart ->eliminar = 'inactivo';
-        $apart ->save();
-
-        return redirect('Articulo');   
+        //
     }
 
     /**
@@ -110,9 +113,6 @@ class ApartadoController extends Controller
      */
     public function destroy($id)
     {
-        $apartados = Apartado::find($id);
-        $apartados -> delete();
-
-        return redirect('Apartados');
+        //
     }
 }
