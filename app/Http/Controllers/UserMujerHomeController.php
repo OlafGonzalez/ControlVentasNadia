@@ -22,19 +22,53 @@ class UserMujerHomeController extends Controller
         $request->user()->authorizeRoles('user');
         $Articulo = Articulo::all();
 
+      
+
         $ArMujerJoyeria = DB::table('articulos')->where('genero','Mujer')->where('disponibilidad','Disponible')->where('categoria','Joyeria')->take(1)->get();
 
+       /*  if (array($ArMujerJoyeria)) {
+                        //$ArHombrePlayera = "NULL";  
+                         $opc1 = 1;
+                    }
+
+        */
 
         $ArMujerBlusa = DB::table('articulos')->where('genero','Mujer')->where('disponibilidad','Disponible')->where('categoria','Blusas')->take(1)->get();
+/*
+        if (array($ArMujerBlusa)) {
+                        //$ArHombrePlayera = "NULL";  
+                         $opc2 = 1;
+                    }
+*/
 
-        $Otros= DB::select('select * from controlventas.articulos where (categoria = "Accesarios" or "Vestidos" or "Faldas")  and   disponibilidad = "Disponible" and genero = "Mujer" limit 1');
 
+        /*Corregir consulta
+        $Otros= DB::select('select * from controlventas.articulos where (categoria = "Accesarios" or "Vestidos" or "Faldas")  and   disponibilidad = "Disponible" and genero = "Mujer" limit 1');*/
+
+        $Otros = DB::table('articulos')->where('genero','Mujer')->where('categoria','Accesarios')->orWhere('categoria', 'Vestidos')->orWhere('categoria', 'Faldas')->where('disponibilidad','Disponible')->take(1)->get();
+        /*
+        if (array($Otros)) {
+                        //$ArHombrePlayera = "NULL";  
+                         $opc3 = 1;
+                    }
+*/
         $ArMujer = DB::table('articulos')->where('genero','Mujer')->where('disponibilidad','Disponible')->take(1)->get();
-
-
+/*
+        if (array($ArMujer)) {
+                        //$ArHombrePlayera = "NULL";  
+                         $opc5 = 1;
+                    }
+*/
         $ApartadoHombre = DB::table('articulos')->where('genero','Mujer')->where('disponibilidad','Apartado')->take(1)->get();
+        /*
+        if (array($ApartadoHombre)) {
+                        //$ArHombrePlayera = "NULL";  
+                         $opc4 = 1;
+                    }
+*/
+       return view('userHomeMujer',compact('ArMujer','Articulo','ArMujerJoyeria','ArMujerBlusa','Otros','ApartadoHombre'));
 
-        return view('userHomeMujer',compact('ArMujer','Articulo','ArMujerJoyeria','ArMujerBlusa','Otros','ApartadoHombre'));
+        //return $Otros;
     }
 
     /**

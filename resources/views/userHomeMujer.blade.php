@@ -4,6 +4,7 @@
 
 <h1 style="letter-spacing: 10px" align="center">Joyeria</h1><br>	
 
+
 <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
   	<ol class="carousel-indicators">
 
@@ -31,7 +32,7 @@
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">
-		         <h1 class="card-title" align="center">Nombre:{{$eve->nombreArticulo}}</h1><br>
+		         <h1 class="card-title" align="center">{{$eve->nombreArticulo}}</h1><br>
 		        <br><h1 class="card-title" align="center">Precio:${{$eve->precio_venta}}</h1><br>
 		      	<div align="center">
 					<a href="{{action('UserMujerHomeController@edit',$eve['id'])}}" class="btn btn-success">Apartar</a>
@@ -51,7 +52,7 @@
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">
-		         <h1 class="card-title" align="center">Nombre:{{$eve->nombreArticulo}}</h1><br>
+		         <h1 class="card-title" align="center">{{$eve->nombreArticulo}}</h1><br>
 		        <br><h1 class="card-title" align="center">Precio:${{$eve->precio_venta}}</h1><br>
 		      	<div align="center">
 					<a href="{{action('UserMujerHomeController@edit',$eve['id'])}}" class="btn btn-success">Apartar</a>
@@ -79,8 +80,8 @@
 
 
 
-
 <h1 style="letter-spacing: 10px" align="center">Blusas</h1><br>	
+
 
 
 <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
@@ -110,7 +111,7 @@
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">
-		         <h1 class="card-title" align="center">Nombre:{{$eve->nombreArticulo}}</h1><br>
+		         <h1 class="card-title" align="center">{{$eve->nombreArticulo}}</h1><br>
 		        <br><h1 class="card-title" align="center">Precio:${{$eve->precio_venta}}</h1><br>
 		      	<div align="center">
 					<a href="{{action('UserMujerHomeController@edit',$eve['id'])}}" class="btn btn-success">Apartar</a>
@@ -130,7 +131,7 @@
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">
-		         <h1 class="card-title" align="center">Nombre:{{$eve->nombreArticulo}}</h1><br>
+		         <h1 class="card-title" align="center">{{$eve->nombreArticulo}}</h1><br>
 		        <br><h1 class="card-title" align="center">Precio:${{$eve->precio_venta}}</h1><br>
 		      	<div align="center">
 					<a href="{{action('UserMujerHomeController@edit',$eve['id'])}}" class="btn btn-success">Apartar</a>
@@ -159,6 +160,9 @@
 
 <h1 style="letter-spacing: 10px" align="center">Otros</h1><br>	
 
+
+
+
 <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
   	<ol class="carousel-indicators">
 
@@ -186,7 +190,7 @@
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">
-		         <h1 class="card-title" align="center">Nombre:{{$eve->nombreArticulo}}</h1><br>
+		         <h1 class="card-title" align="center">{{$eve->nombreArticulo}}</h1><br>
 		        <br><h1 class="card-title" align="center">Precio:${{$eve->precio_venta}}</h1><br>
 		      	<div align="center">
 					<a href="{{action('UserMujerHomeController@edit',$eve['id'])}}" class="btn btn-success">Apartar</a>
@@ -206,7 +210,7 @@
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">
-		         <h1 class="card-title" align="center">Nombre:{{$eve->nombreArticulo}}</h1><br>
+		         <h1 class="card-title" align="center">{{$eve->nombreArticulo}}</h1><br>
 		        <br><h1 class="card-title" align="center">Precio:${{$eve->precio_venta}}</h1><br>
 		      	<div align="center">
 					<a href="{{action('UserMujerHomeController@edit',$eve['id'])}}" class="btn btn-success">Apartar</a>
@@ -238,7 +242,6 @@
 
 
 
-
 <div id="carouselExampleIndicators4" class="carousel slide" data-ride="carousel">
   	<ol class="carousel-indicators">
 
@@ -259,14 +262,14 @@
 
 	@if($eve->disponibilidad == 'Apartado' && $eve->id == $apartado->id && $eve->genero == 'Mujer')
     <div class="carousel-item active">
-		<div class="card mb-8" style="max-width: 4000px; height: 400px; background-color: #49beb7">
+		<div class="card mb-8" style="max-width: 4000px; height: 400px; background-color: #F6A4ED">
 		  <div  class="row no-gutters">
 		    <div class="col-md-4">
 		      <img src="images/{{$eve->foto}}" class="card-img" alt="...">
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">
-		        <h1 class="card-title" align="center">Nombre:{{$eve->nombreArticulo}}</h1><br>
+		        <h1 class="card-title" align="center">{{$eve->nombreArticulo}}</h1><br>
 		        <br><h1 class="card-title" align="center">Precio:${{$eve->precio_venta}}</h1><br>
 		        <p class="card-text" style="letter-spacing: 5px;"><small>Agregado: {{$eve->created_at}}</small></p>
 		      </div>
@@ -283,7 +286,7 @@
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">
-		        <h1 class="card-title" align="center">Nombre:{{$eve->nombreArticulo}}</h1><br>
+		        <h1 class="card-title" align="center">{{$eve->nombreArticulo}}</h1><br>
 		        <br><h1 class="card-title" align="center">Precio:${{$eve->precio_venta}}</h1><br>
 		        <p class="card-text" style="letter-spacing: 5px;"><small>Agregado: {{$eve->created_at}}</small></p>
 		      </div>
@@ -306,5 +309,6 @@
     <span class="sr-only">Next</span>
   </a>
 </div><br>
+
 
 @endsection

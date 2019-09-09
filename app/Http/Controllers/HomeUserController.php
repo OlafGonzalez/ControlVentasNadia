@@ -23,22 +23,50 @@ class HomeUserController extends Controller
         
         $Articulo = Articulo::all();
 
-
+     
 
         $ArHombrePlayera = DB::table('articulos')->where('genero','Hombre')->where('disponibilidad','Disponible')->where('categoria','Playera')->take(1)->get();
-
-       
+/*
+                    if (array($ArHombrePlayera)==NUll) {
+                        
+                         $opc1 = 2;
+                    }
+                    */
 
         $ArHombrePantalones = DB::table('articulos')->where('genero','Hombre')->where('disponibilidad','Disponible')->where('categoria','Pantalones')->take(1)->get();
+/*
+                     if (array($ArHombrePantalones)) {
+                        //$ArHombrePantalones = "NULL";  
+                         $opc2 = 2;
+                    }
+*/
 
          $ArHombreCamisa = DB::table('articulos')->where('genero','Hombre')->where('disponibilidad','Disponible')->where('categoria','Camisas')->take(1)->get();
+         /*
+                if (array($ArHombreCamisa)) {
+                            //$ArHombrePantalones = "NULL";  
+                             $opc3 = 2;
+                        }
 
+*/
          $ArHombreAccesorios = DB::table('articulos')->where('genero','Hombre')->where('disponibilidad','Disponible')->where('categoria','Accesarios')->take(1)->get();
-
+/*
+                 if (array($ArHombreAccesorios)) {
+                            //$ArHombrePantalones = "NULL";  
+                             $opc4 = 2;
+                        }
+*/
         $ApartadoHombre = DB::table('articulos')->where('genero','Hombre')->where('disponibilidad','Apartado')->take(1)->get();
+/*
+                 if (array($ApartadoHombre)==NUll) {
+                            //$ArHombrePantalones = "NULL";  
+                             $opc5 = 2;
+                        }
+*/
+      return view('UserHome',compact('Articulo','ArHombrePlayera','ApartadoHombre','ArHombrePantalones','ArHombreCamisa','ArHombreAccesorios'));
 
-        return view('UserHome',compact('Articulo','ArHombrePlayera','ApartadoHombre','ArHombrePantalones','ArHombreCamisa','ArHombreAccesorios'));
-
+       
+      // return $opc2;
 
 
     }

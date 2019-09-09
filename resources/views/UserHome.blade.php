@@ -2,9 +2,7 @@
 @section('content')
 <h1 style="letter-spacing: 10px" align="center">Playeras</h1><br>
 
- @foreach($ArHombrePlayera as $hombre)
 
-	@if($hombre !== null)
 
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   	<ol class="carousel-indicators">
@@ -22,6 +20,7 @@
  	@endforeach
 
   </ol>
+
   <div class="carousel-inner">
   	@foreach($Articulo as $eve)
 	@foreach($ArHombrePlayera as $hombre)
@@ -34,7 +33,7 @@
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">
-		        <h1 class="card-title" align="center">Nombre:{{$eve->nombreArticulo}}</h1><br>
+		        <h1 class="card-title" align="center">{{$eve->nombreArticulo}}</h1><br>
 		        <br><h1 class="card-title" align="center">Precio:${{$eve->precio_venta}}</h1><br>
 		      	<div align="center">
 					<a href="{{action('HomeUserController@edit',$eve['id'])}}" class="btn btn-success">APARTAR</a>
@@ -54,7 +53,7 @@
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">
-		         <h1 class="card-title" align="center">Nombre:{{$eve->nombreArticulo}}</h1><br>
+		         <h1 class="card-title" align="center">{{$eve->nombreArticulo}}</h1><br>
 		        <br><h1 class="card-title" align="center">Precio:${{$eve->precio_venta}}</h1><br>
 		      	<div align="center">
 					<a href="{{action('HomeUserController@edit',$eve['id'])}}" class="btn btn-success">APARTAR</a>
@@ -79,14 +78,13 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-@else 
-<h1 align="center">No articulos disponibles </h1>
 
-@endif
 
-@endforeach
+
+
 
 <h1 style="letter-spacing: 10px" align="center">Pantalones</h1><br>
+
 
 <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
   	<ol class="carousel-indicators">
@@ -116,7 +114,7 @@
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">
-		        <h1 class="card-title" align="center">Nombre:{{$eve->nombreArticulo}}</h1><br>
+		        <h1 class="card-title" align="center">{{$eve->nombreArticulo}}</h1><br>
 		        <br><h1 class="card-title" align="center">Precio:${{$eve->precio_venta}}</h1><br>
 		      	<div align="center">
 					<a href="{{action('HomeUserController@edit',$eve['id'])}}" class="btn btn-success">APARTAR</a>
@@ -136,7 +134,7 @@
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">
-		         <h1 class="card-title" align="center">Nombre:{{$eve->nombreArticulo}}</h1><br>
+		         <h1 class="card-title" align="center">{{$eve->nombreArticulo}}</h1><br>
 		        <br><h1 class="card-title" align="center">Precio:${{$eve->precio_venta}}</h1><br>
 		      	<div align="center">
 					<a href="{{action('HomeUserController@edit',$eve['id'])}}" class="btn btn-success">APARTAR</a>
@@ -166,11 +164,6 @@
 
 <h1 style="letter-spacing: 10px" align="center">Camisas</h1><br>
 
-
-
-
-
-
 <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
   	<ol class="carousel-indicators">
 
@@ -199,7 +192,7 @@
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">
-		        <h1 class="card-title" align="center">Nombre:{{$eve->nombreArticulo}}</h1><br>
+		        <h1 class="card-title" align="center">{{$eve->nombreArticulo}}</h1><br>
 		        <br><h1 class="card-title" align="center">Precio:${{$eve->precio_venta}}</h1><br>
 		      	<div align="center">
 					<a href="{{action('HomeUserController@edit',$eve['id'])}}" class="btn btn-success">APARTAR</a>
@@ -219,7 +212,7 @@
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">
-		         <h1 class="card-title" align="center">Nombre:{{$eve->nombreArticulo}}</h1><br>
+		         <h1 class="card-title" align="center">{{$eve->nombreArticulo}}</h1><br>
 		        <br><h1 class="card-title" align="center">Precio:${{$eve->precio_venta}}</h1><br>
 		      	<div align="center">
 					<a href="{{action('HomeUserController@edit',$eve['id'])}}" class="btn btn-success">APARTAR</a>
@@ -247,11 +240,7 @@
 
 
 
-
 <h1 style="letter-spacing: 10px" align="center">Accesorios</h1><br>
-
-
-
 
 
 <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
@@ -282,7 +271,7 @@
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">
-		        <h1 class="card-title" align="center">Nombre:{{$eve->nombreArticulo}}</h1><br>
+		        <h1 class="card-title" align="center">{{$eve->nombreArticulo}}</h1><br>
 		        <br><h1 class="card-title" align="center">Precio:${{$eve->precio_venta}}</h1><br>
 		      	<div align="center">
 					<a href="{{action('HomeUserController@edit',$eve['id'])}}" class="btn btn-success">APARTAR</a>
@@ -302,7 +291,7 @@
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">
-		         <h1 class="card-title" align="center">Nombre:{{$eve->nombreArticulo}}</h1><br>
+		         <h1 class="card-title" align="center">{{$eve->nombreArticulo}}</h1><br>
 		        <br><h1 class="card-title" align="center">Precio:${{$eve->precio_venta}}</h1><br>
 		      	<div align="center">
 					<a href="{{action('HomeUserController@edit',$eve['id'])}}" class="btn btn-success">APARTAR</a>
@@ -330,8 +319,8 @@
 
 
 
-<h1 style="letter-spacing: 10px" align="center">Apartado</h1><br>
 
+<h1 style="letter-spacing: 10px" align="center">Apartado</h1><br>
 
 <div id="carouselExampleIndicators4" class="carousel slide" data-ride="carousel">
   	<ol class="carousel-indicators">
@@ -360,7 +349,7 @@
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">
-		        <h1 class="card-title" align="center">Nombre:{{$eve->nombreArticulo}}</h1><br>
+		        <h1 class="card-title" align="center">{{$eve->nombreArticulo}}</h1><br>
 		        <br><h1 class="card-title" align="center">Precio:${{$eve->precio_venta}}</h1><br>
 		        <p class="card-text" style="letter-spacing: 5px;"><small>Agregado: {{$eve->created_at}}</small></p>
 		      </div>
@@ -377,7 +366,7 @@
 		    </div>
 		    <div class="col-md-8">
 		      <div class="card-body">
-		        <h1 class="card-title" align="center">Nombre:{{$eve->nombreArticulo}}</h1><br>
+		        <h1 class="card-title" align="center">{{$eve->nombreArticulo}}</h1><br>
 		        <br><h1 class="card-title" align="center">Precio:${{$eve->precio_venta}}</h1><br>
 		        <p class="card-text" style="letter-spacing: 5px;"><small>Agregado: {{$eve->created_at}}</small></p>
 		      </div>
@@ -401,4 +390,6 @@
   </a>
 </div><br>
 
+
 @endsection
+
